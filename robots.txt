@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orequest.top/sitemap.xml
