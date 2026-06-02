@@ -60,7 +60,13 @@ nav.links a:hover{opacity:1;color:var(--green)}
 .btn.line:hover{border-color:var(--green);color:var(--green)}
 .btn.wht{background:#fff;color:var(--green-d);border-color:#fff}
 .btn.wht:hover{background:var(--paper)}
-@media(max-width:900px){nav.links{display:none}}
+.navtoggle{display:none;width:44px;height:40px;border:1px solid rgba(21,32,26,.25);border-radius:4px;background:none;cursor:pointer;align-items:center;justify-content:center;gap:4px;flex-direction:column}
+.navtoggle span{display:block;width:20px;height:2px;background:var(--ink)}
+.mobnav{display:none;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 24px 30px -18px rgba(16,40,30,.4);z-index:59}
+.mobnav a{padding:15px 30px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)}
+.mobnav a.cta{background:var(--green);color:#fff;text-align:center}
+body.navopen .mobnav{display:flex}
+@media(max-width:900px){nav.links{display:none}.navtoggle{display:flex}header.nav .wrap>a.btn{display:none}}
 
 .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .hero .bg{position:absolute;inset:0;background:#102a1f}
@@ -204,6 +210,10 @@ footer a{display:block;color:#a9c6b6;font-size:14.5px;padding:5px 0}footer a:hov
       <a href="#about">About</a><a href="#advantage">Advantage</a><a href="#capability">Capabilities</a><a href="#locations">Locations</a><a href="#operations">Operations</a><a href="#product">Product</a><a href="#contact">Contact</a>
     </nav>
     <a href="#contact" class="btn">Enquire</a>
+    <button class="navtoggle" aria-label="Open menu" onclick="document.body.classList.toggle('navopen')"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobnav" onclick="document.body.classList.remove('navopen')">
+    <a href="#about">About</a><a href="#advantage">Advantage</a><a href="#capability">Capabilities</a><a href="#locations">Locations</a><a href="#operations">Operations</a><a href="#product">Product</a><a href="#contact" class="cta">Enquire</a>
   </div>
 </header>
 
